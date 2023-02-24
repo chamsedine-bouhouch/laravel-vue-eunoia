@@ -12,6 +12,8 @@ import { createApp } from "vue";
  * registering components with the application instance so they are ready
  * to use in your application's views. An example is included for you.
  */
+axios.defaults.withCredentials = true;
+
 import App from "./components/App.vue";
 import router from "./router/router";
 // const Home = { template: '<div>Home</div>' }

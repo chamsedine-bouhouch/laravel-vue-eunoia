@@ -4,18 +4,42 @@
         <form>
             <div class="mb-3">
                 <label for="email">Email</label>
-                <input type="email" name="email" id="email" />
+                <input v-model="form.email" type="email" name="email" id="email" />
             </div>
             <div class="mb-3">
                 <label for="password">Password</label>
-                <input type="password" name="password" id="" />
+                <input v-model="form.password" type="password" name="password" id="" />
             </div>
 
-            <button type="submit" @click=login class="btn btn-primary">Submit</button>
+            <button @click.prevent="login()" class="btn btn-primary">Submit</button>
         </form>
     </div>
 </template>
-<script setup>
+
+<script>
+export default {
+    data() {
+        return {
+            form: {
+                email: "",
+                password: ""
+            },
+
+
+        }
+    },
+    methods: {
+        login() {
+            axios.post('api/login',this.form).then(response=>{
+                console.log(response);
+                this.$router.push('dashboard')
+            })
+        }
+    },
+
+}
+</script>
+<!-- <script setup>
 import { ref } from "vue";
 const email = ref("");
 const password = ref("");
@@ -26,4 +50,4 @@ setup(props) {
     }
 }
 
-</script>
+</script> -->
