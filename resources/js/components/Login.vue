@@ -1,21 +1,20 @@
 <template lang="">
     <div>
         <h1>Login form</h1>
-        <form action="" method="post">
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email">
-            <label for="password">Password</label>
-            <input type="password" name="password" id="">
+        <form>
+            <div class="mb-3">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" />
+            </div>
+            <div class="mb-3">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="" />
+            </div>
 
-            <button type="submit">Login</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
 </template>
 <script>
-export default {
-    
-}
+export default {};
 </script>
-<style lang="">
-    
-</style>
