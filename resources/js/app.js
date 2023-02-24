@@ -16,6 +16,7 @@ axios.defaults.withCredentials = true;
 
 import App from "./components/App.vue";
 import router from "./router/router";
+import store from "./store/store";
 // const Home = { template: '<div>Home</div>' }
 // const About = { template: '<div>About</div>' }
 import 'bootstrap/dist/css/bootstrap.css'
@@ -34,7 +35,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 //   })
 // const app = createApp(App);
 // app.use(router);
-createApp(App).use(router).mount('#app')
+createApp(App).use(router).use(store).mount('#app')
 // import ExampleComponent from './components/ExampleComponent.vue';
 // app.component('example-component', ExampleComponent);
 

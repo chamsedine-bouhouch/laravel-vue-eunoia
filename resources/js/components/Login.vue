@@ -30,9 +30,15 @@ export default {
     },
     methods: {
         login() {
-            axios.post('api/login',this.form).then(response=>{
-                console.log(response);
-                this.$router.push('dashboard')
+            axios.post('api/login', this.form).then(response => {
+                // console.log(response);
+                const token = response.data.access_token;
+                localStorage.setItem("access_token", token);
+                localStorage.setItem(
+                "currentUser",
+                JSON.stringify(response.data.user)
+                );
+                    this.$router.push('dashboard')
             })
         }
     },

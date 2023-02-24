@@ -14,11 +14,25 @@ class SubjectSeeder extends Seeder
      */
     public function run(): void
     {
-        $subject=Subject::create([
-            'name' => 'laravel-vue',
+        // $subject=Subject::create([
+        //     'name' => 'laravel-vue',
+        // ]);
+        // UserSubject::create([
+        //     'subject_id' => $subject->id,
+        //     'user_id' => 1,
+        // ]);
+        $subject1=Subject::create([
+            'name' => 'spring-angular',
         ]);
         UserSubject::create([
-            'subject_id' => $subject->id,
+            'subject_id' => $subject1->id,
+            'user_id' => 1,
+        ]);
+        $subject2=Subject::create([
+            'name' => 'node-react',
+        ]);
+        UserSubject::create([
+            'subject_id' => $subject2->id,
             'user_id' => 1,
         ]);
     }
