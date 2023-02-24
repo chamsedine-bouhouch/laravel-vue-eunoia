@@ -11,10 +11,19 @@
                 <input type="password" name="password" id="" />
             </div>
 
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" @click=login class="btn btn-primary">Submit</button>
         </form>
     </div>
 </template>
-<script>
-export default {};
+<script setup>
+import { ref } from "vue";
+const email = ref("");
+const password = ref("");
+
+setup(props) {
+    const form = ref()
+    function login(params) {
+    }
+}
+
 </script>
